@@ -1,0 +1,138 @@
+﻿@model UserDetails.ViewModels.DetailsViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h1>
+        @Model.Title
+    </h1>
+    <form asp-action="Save" method="post">
+        @Html.HiddenFor(model => model.User.Id)
+        <table class="table">
+            <tr>
+                <th>
+                    <label asp-for="User.UserName"></label>
+                </th>
+                <td>
+                    <input asp-for="User.UserName" />
+                </td>
+                <td>
+                    <span asp-validation-for="User.UserName"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="User.FirstName"></label>
+                </th>
+                <td>
+                    <input asp-for="User.FirstName">
+                </td>
+                <td>
+                    <span asp-validation-for="User.FirstName"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="User.SurName"></label>
+                </th>
+                <td>
+                    <input asp-for="User.SurName">
+                </td>
+                <td>
+                    <span asp-validation-for="User.SurName"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="User.Email"></label>
+                </th>
+                <td>
+                    <input asp-for="User.Email">
+                </td>
+                <td>
+                    <span asp-validation-for="User.Email"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="User.Phone"></label>
+                </th>
+                <td>
+                    <input asp-for="User.Phone">
+                </td>
+                <td>
+                    <span asp-validation-for="User.Phone"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="User.BirthDate"></label>
+                </th>
+                <td>
+                    <input asp-for="User.BirthDate">
+                </td>
+                <td>
+                    <span asp-validation-for="User.BirthDate"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="User.BirthPlace"></label>
+                </th>
+                <td>
+                    <input asp-for="User.BirthPlace">
+                </td>
+                <td>
+                    <span asp-validation-for="User.BirthPlace"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="CurrentPassword"></label>
+                </th>
+                <td>
+                    <input type="password" asp-for="CurrentPassword" disabled="@(!Model.Exist)">
+                </td>
+                <td>
+                    <span asp-validation-for="CurrentPassword"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="NewPassword"></label>
+                </th>
+                <td>
+                    <input type="password" asp-for="NewPassword">
+                </td>
+                <td>
+                    <span asp-validation-for="NewPassword"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="PasswordCheck"></label>
+                </th>
+                <td>
+                    <input type="password" asp-for="PasswordCheck">
+                </td>
+                <td>
+                    <span asp-validation-for="PasswordCheck"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Save</button>
+                </td>
+                <td>
+                    <a asp-Controller="List" asp-action="List">Back</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

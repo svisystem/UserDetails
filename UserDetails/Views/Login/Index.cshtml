@@ -1,0 +1,44 @@
+﻿@model UserDetails.ViewModels.LoginViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form asp-action="Login" method="post">
+        <table class="table">
+            <tr>
+                <td>
+                    <label asp-for="UserName"></label>
+                </td>
+                <td>
+                    <input asp-for="UserName" />
+                </td>
+                <td>
+                    <span asp-validation-for="UserName"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Password"></label>
+                </td>
+                <td>
+                    <input type="password" asp-for="Password" />
+                </td>
+                <td>
+                    <span asp-validation-for="Password"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Login</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
